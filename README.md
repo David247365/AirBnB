@@ -304,7 +304,7 @@ Returns all the spots owned (created) by the current user.
 - Request
 
   - Method: GET
-  - URL: /:userId/spots
+  - URL: /users/:userId/spots
   - Body: none
 
 - Successful Response
@@ -669,7 +669,7 @@ Returns all the reviews written by the current user.
 - Request
 
   - Method: GET
-  - URL: /reviews/:userId
+  - URL: /users/:userId/reviews
   - Body: none
 
 - Successful Response
@@ -868,7 +868,7 @@ Create and return a new image for a review specified by id.
 - Request
 
   - Method: POST
-  - URL: /review/:reviewId
+  - URL: /review/:reviewId/images
   - Headers:
     - Content-Type: application/json
   - Body:
@@ -1038,7 +1038,7 @@ Return all the bookings that the current user has made.
 - Request
 
   - Method: GET
-  - URL: /:userId/bookings
+  - URL: /users/:userId/bookings
   - Body: none
 
 - Successful Response
@@ -1432,7 +1432,7 @@ Delete an existing image for a Review.
 - Request
 
   - Method: DELETE
-  - URL: /review/:reviewId/images/:imageId
+  - URL: /reviews/:reviewId/images/:imageId
   - Body: none
 
 - Successful Response
