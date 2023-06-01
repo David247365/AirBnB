@@ -18,6 +18,7 @@ const app = express();
 app.use(morgan("dev"));
 app.use(cookieParser());
 app.use(express.json());
+app.use(routes); // Connect all the routes
 
 // Security Middleware
 if (!isProduction) {
@@ -42,8 +43,6 @@ app.use(
 		},
 	})
 );
-
-app.use(routes); // Connect all the routes
 
 app.use((_req, _res, next) => {
 	const err = new Error("The requested resource couldn't be found.");

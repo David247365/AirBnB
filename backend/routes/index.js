@@ -2,6 +2,8 @@
 const express = require("express");
 const router = express.Router();
 const apiRouter = require("./api");
+const { restoreUser } = require("../utils/auth");
+router.use(restoreUser);
 
 // router.get("/hello/world", function (req, res) {
 // 	res.cookie("XSRF-TOKEN", req.csrfToken());
@@ -16,6 +18,8 @@ router.get("/api/csrf/restore", (req, res) => {
 	});
 });
 
-router.use("/api", apiRouter);
+router.get("/restore-user", (req, res) => {
+	return res.json(req.user);
+});
 
 module.exports = router;
